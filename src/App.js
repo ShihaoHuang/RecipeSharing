@@ -63,7 +63,6 @@ function App() {
   }
 
   function editRecipe(recipeToBeEdited, name, steps) {
-    console.log("123", name);
     saveRecipe({
       id: recipeToBeEdited.id,
       name: name,

@@ -6,7 +6,7 @@ export function fetchAllRecipes(){
 
 export function saveRecipe(data){
     const isEdit = data.hasOwnProperty("id");
-    const url = isEdit? `api/recipes/${data.id}` : "/recipes";
+    const url = isEdit? `api/recipes/${data.id}` : "api/recipes";
     const method = isEdit?"PUT":"POST";
     return fetch(url, {
         method,
