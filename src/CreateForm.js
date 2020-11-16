@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import React, {  useState } from "react";
 import Button from "./Button.js";
-import { findRecipe } from "./helpers.js";
+
 import "./App.css";
 export default function CreateForm({ recipes, createRecipe }) {
   const [name, setName] = useState("");
   const [steps, setSteps] = useState([{ value: null }]);
   const [nameError, setNameError] = useState(false);
   const [stepError, setStepError] = useState([{ value: false }]);
-  const history = useHistory();
+
 
   function handleChange(i, event) {
     const values = [...steps];

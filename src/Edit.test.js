@@ -1,17 +1,12 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import App from "./App";
-import { MemoryRouter, Route, useParams } from "react-router-dom";
+
+import { MemoryRouter, Route} from "react-router-dom";
 import { createServer } from "miragejs";
 import { fetchAllRecipes } from "./api.js";
-import Posts from "./Posts";
-import Detail from "./Detail";
 import EditForm from "./EditForm.js";
-import { matches } from "./helpers";
-import CreateForm from "./CreateForm";
 
 let server;
-let recipes;
 
 beforeEach(() => {
   server = createServer({
@@ -52,7 +47,7 @@ test("testing step info", async () => {
     function fakeEdit() {
       return false;
     }
-    const { container, queryAllByTestId, queryByText, getByTestId } = render(
+    const { queryAllByTestId} = render(
       <MemoryRouter initialEntries={["edit/2"]}>
         <Route path="edit/:id">
           <EditForm recipes={recipes} editRecipe={fakeEdit}></EditForm>
@@ -73,7 +68,7 @@ test("testing adding steps", async () => {
   function fakeEdit() {
     return false;
   }
-  const { container, queryAllByTestId, queryByText, getByTestId } = render(
+  const {  queryAllByTestId, getByTestId } = render(
     <MemoryRouter initialEntries={["edit/2"]}>
       <Route path="edit/:id">
         <EditForm recipes={recipes} editRecipe={fakeEdit}></EditForm>
@@ -93,7 +88,7 @@ test("testing delete steps", async () => {
     function fakeEdit() {
       return false;
     }
-    const { container, queryAllByTestId, queryByText, getByTestId } = render(
+    const { queryAllByTestId, getByTestId } = render(
       <MemoryRouter initialEntries={["edit/2"]}>
         <Route path="edit/:id">
           <EditForm recipes={recipes} editRecipe={fakeEdit}></EditForm>

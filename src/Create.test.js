@@ -10,17 +10,10 @@
 
 import React from "react";
 import { render ,fireEvent} from "@testing-library/react";
-import App from "./App";
-import { MemoryRouter, Route, useParams } from "react-router-dom";
 import { createServer } from "miragejs";
-import {fetchAllRecipes} from "./api.js"
-import Posts from './Posts'
-import Detail from './Detail'
-import {matches} from './helpers'
 import CreateForm from './CreateForm'
 
 let server;
-let recipes;
 
 beforeEach(() => {
   server = createServer({
@@ -72,18 +65,6 @@ afterEach(() => {
 
 
 
-const columns = [
-  {
-    field: "title",
-    header: "Title",
-  },
-  {
-    field: "score",
-    header: "Score",
-  },
-];
-
-
 
 
 test("testing add cooking steps", async() => {
@@ -91,7 +72,7 @@ test("testing add cooking steps", async() => {
     function fakeCreate(){
         return false;
     }
-    const { container, queryAllByTestId, queryByText, getByTestId } = render(
+    const { queryAllByTestId, getByTestId } = render(
 
           <CreateForm createRecipe={fakeCreate}></CreateForm>
       
@@ -113,7 +94,7 @@ test("testing delete steps", async() => {
     function fakeCreate(){
         return false;
     }
-    const { container, queryAllByTestId, queryByText, getByTestId } = render(
+    const { queryAllByTestId, getByTestId } = render(
 
         <CreateForm createRecipe={fakeCreate}></CreateForm>
       
