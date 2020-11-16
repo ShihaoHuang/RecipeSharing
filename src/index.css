@@ -1,14 +1,12 @@
-
 body {
   margin: 0;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: x-large;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-

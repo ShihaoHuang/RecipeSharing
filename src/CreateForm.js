@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 
 import Button from "./Button.js";
 
@@ -8,7 +8,6 @@ export default function CreateForm({ recipes, createRecipe }) {
   const [steps, setSteps] = useState([{ value: null }]);
   const [nameError, setNameError] = useState(false);
   const [stepError, setStepError] = useState([{ value: false }]);
-
 
   function handleChange(i, event) {
     const values = [...steps];
@@ -20,8 +19,8 @@ export default function CreateForm({ recipes, createRecipe }) {
     const values = [...steps];
     values.push({ value: null });
     const errors = [...stepError];
-    errors.push({ value: false});
-    setStepError(errors)
+    errors.push({ value: false });
+    setStepError(errors);
     setSteps(values);
   }
 
@@ -41,30 +40,29 @@ export default function CreateForm({ recipes, createRecipe }) {
       return step.value;
     });
 
-    if (!checkInputs()){
+    if (!checkInputs()) {
       createRecipe(name, modified);
     }
-   
   }
 
-  function checkInputs(){
+  function checkInputs() {
     var isError = false;
-    if (!name){
+    if (!name) {
       setNameError(true);
       isError = true;
-    }else{
+    } else {
       setNameError(false);
     }
     const errors = [...stepError];
-    steps.forEach((step, idx)=>{        
-      if (step.value){
-        errors[idx].value= false;
-      }else{
-        errors[idx].value= true;
-        isError = true
+    steps.forEach((step, idx) => {
+      if (step.value) {
+        errors[idx].value = false;
+      } else {
+        errors[idx].value = true;
+        isError = true;
       }
-    })
-    setStepError(errors)
+    });
+    setStepError(errors);
     return isError;
   }
   function handleNameChange(event) {
@@ -78,8 +76,10 @@ export default function CreateForm({ recipes, createRecipe }) {
         onSubmit={handleSubmit}
       >
         <div className="form-group ">
-        <h4 className="ml-3"><strong>Name</strong> </h4>
-        <input
+          <h4 className="ml-3">
+            <strong>Name</strong>{" "}
+          </h4>
+          <input
             type="text"
             placeholder="name"
             value={name}
@@ -88,12 +88,14 @@ export default function CreateForm({ recipes, createRecipe }) {
             id="title"
           />
         </div>
-        {nameError && <div className="text-danger ml-3">field cannot be empty</div>}
+        {nameError && (
+          <div className="text-danger ml-3">field cannot be empty</div>
+        )}
         <div className="form-group">
           <Button
             buttonStyle={"add-btn"}
             buttonType={"button"}
-            testId = {"add-btn"}
+            testId={"add-btn"}
             contentStyle={""}
             buttonContent={<i className="fas fa-plus">Add Cooking Steps</i>}
             onClickFunction={handleAdd}
@@ -102,26 +104,27 @@ export default function CreateForm({ recipes, createRecipe }) {
           {steps.map((step, idx) => {
             return (
               <div key={`${step}-${idx}`}>
-              <div >
-                <input
-                  type="text"
-                  className="input-form-style m-3 col-sm-10 col-md-10 col-lg-10"
-                  placeholder={`  step${idx + 1}`}
-                  value={step.value || ""}
-                  onChange={(e) => handleChange(idx, e)}
-                />
-                <Button
-                  buttonStyle={"delete-btn"}
-                  buttonType={"button"}
-                  testId = {"delete-btn"}
-                  contentStyle={""}
-                  buttonContent={<i className="fas fa-trash"></i>}
-                  onClickFunction={() => handleRemove(idx)}
-                ></Button>
+                <div>
+                  <input
+                    type="text"
+                    className="input-form-style m-3 col-sm-10 col-md-10 col-lg-10"
+                    placeholder={`  step${idx + 1}`}
+                    value={step.value || ""}
+                    onChange={(e) => handleChange(idx, e)}
+                  />
+                  <Button
+                    buttonStyle={"delete-btn"}
+                    buttonType={"button"}
+                    testId={"delete-btn"}
+                    contentStyle={""}
+                    buttonContent={<i className="fas fa-trash"></i>}
+                    onClickFunction={() => handleRemove(idx)}
+                  ></Button>
+                </div>
+                {stepError[idx].value && (
+                  <div className="text-danger ml-3">field cannot be empty</div>
+                )}
               </div>
-              {stepError[idx].value && <div className="text-danger ml-3">field cannot be empty</div>}
-              </div>
-              
             );
           })}
         </div>
@@ -129,7 +132,6 @@ export default function CreateForm({ recipes, createRecipe }) {
           buttonStyle={"submit-btn center p-2"}
           contentStyle={""}
           buttonContent={"submit"}
-          
         ></Button>
       </form>
     </>
