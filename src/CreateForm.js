@@ -1,4 +1,5 @@
 import React, {  useState } from "react";
+
 import Button from "./Button.js";
 
 import "./App.css";
@@ -81,7 +82,7 @@ export default function CreateForm({ recipes, createRecipe }) {
         <input
             type="text"
             placeholder="name"
-            value={""}
+            value={name}
             onChange={handleNameChange}
             className="input-form-style ml-3"
             id="title"
