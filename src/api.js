@@ -1,12 +1,12 @@
 export function fetchAllRecipes(){
-    return fetch("/recipes").then((response) => {
+    return fetch("api/recipes").then((response) => {
         return response.json();
       });
 }
 
 export function saveRecipe(data){
     const isEdit = data.hasOwnProperty("id");
-    const url = isEdit? `/recipes/${data.id}` : "/recipes";
+    const url = isEdit? `api/recipes/${data.id}` : "/recipes";
     const method = isEdit?"PUT":"POST";
     return fetch(url, {
         method,
@@ -20,7 +20,7 @@ export function saveRecipe(data){
 }
 
 export function deleteRecipe(id){
-    return fetch(`/recipes/${id}`, {
+    return fetch(`api/recipes/${id}`, {
         method: "DELETE",
     });
 }

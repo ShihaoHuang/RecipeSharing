@@ -19,7 +19,7 @@ let server;
 beforeEach(() => {
   server = createServer({
     routes() {
-      this.namespace = "";
+      this.namespace = "api";
       this.logging = false;
 
       this.get("/recipes", (schema, request) => {
