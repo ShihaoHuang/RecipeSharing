@@ -1,0 +1,305 @@
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.start {
+  background: rgb(0, 0, 0);
+  height: 90px;
+  min-width: 200px;
+  max-width: 300px;
+  width: 50%;
+  border: none;
+  outline: none;
+  border-radius: 90px;
+  color: #eee;
+  font-size: 40px;
+  font-family: 'Cookie', cursive;
+  position: relative;
+  transition: 1s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.all-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  -ms-transform: translateX(50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transform: translateX(50%);
+}
+
+.x-center{
+  position: absolute;
+  right: 50%;
+  -ms-transform: translateX(50%);
+
+
+  transform: translateX(50%);
+}
+
+.results:hover{
+  color: rgb(114, 114, 114);
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.hidden{
+  display: none;
+}
+
+
+.start:hover {
+  background: transparent;
+  outline:0;
+  box-shadow: none;
+  color: #282c34;
+}
+
+.start:focus {
+  background: transparent;
+  outline:0;
+  box-shadow: none;
+  color: #282c34;
+}
+
+a{
+  color: rgb(54, 54, 54);
+}
+a:hover{
+  color: rgba(0, 0, 0, 0.5);
+  transition-duration: 0.5s;
+  
+}
+.input-form-style {
+  border-radius: 90px;
+  background-color: #ffffff;
+  padding: 5px;
+  border: 0.5px solid rgb(184, 184, 184);
+}
+
+.input-form-style:focus {
+  border-radius: 90px;
+  outline: 0;
+  
+}
+
+.top-space{
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  right: 50%;
+  -ms-transform: translateX(50%);
+  -ms-transform: translateY(-20%);
+  transform: translateY(-20%);
+  transform: translateX(50%);
+}
+
+.input-form-style:hover {
+  background-color: rgb(231, 231, 231);
+  
+}
+.add-btn{
+  
+  background:transparent;
+  margin-bottom: 5px;
+  border: 0;
+
+}
+
+.add-btn:focus{
+  
+  outline: 0;
+  
+}
+.add-btn:hover{
+  
+  color: rgb(105, 105, 105);
+  transition-duration: 0.5s;
+  
+}
+
+.delete-btn{
+  background:transparent;
+  margin-bottom: 5px;
+
+  border: 0;
+}
+.delete-btn:focus{
+  outline: 0;
+}
+.delete-btn:hover{
+  
+  color: rgb(105, 105, 105);
+  transition-duration: 0.5s;
+  
+}
+.submit-btn{
+  border-radius: 200px;
+  width: 200px;
+  border: #eee 0.5px;
+  background: transparent;
+  background-color: #ffc579;
+}
+.submit-btn:hover{
+  border: 0px;
+  background-color: rgb(235, 233, 233);
+  transition-duration: 0.5s;
+}
+
+.search-form{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: all 1s;
+  width: 3vw;
+  height: 50px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  padding: 5px;
+}
+
+.search-input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 1;
+  border: 1 black solid;
+  display: none;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+.fa{
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: #07051a;
+  text-align: center;
+  font-size: 1.2em;
+  transition: all 1s;
+}
+
+.search-form:hover{
+  width: 300px;
+  cursor: pointer;
+}
+
+.search-form:hover input{
+  display: block;
+  
+}
+
+.search-form input:focus{
+  outline: 0;
+  
+}
+
+.search-form:hover .fa{
+  background: #07051a;
+  color: white;
+}
+
+.nav-bar{
+
+  font-family: 'Indie Flower', cursive;
+  font-size: 2vw;
+
+}
+
+.nav-bar:focus{
+  color: rgb(146, 101, 4);
+}
+.brand{
+  font-family: 'Indie Flower', cursive;
+  font-size: 2vw;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+.random-search-btn{
+  background: transparent;
+  border: solid 0.2px rgb(180, 180, 180);
+  border-radius: 80px;
+  min-width: 300px;
+  width: 20vw;
+  height: 40px;
+  position: absolute;
+  right: 50%;
+  -ms-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+.random-search-btn:hover{
+  color: rgb(0, 0, 0);
+  background: #ffc579;
+  transition-duration: 0.5s;
+  border: 0px;
+
+
+}
+.random-search-btn:focus{
+  outline:0;
+
+}

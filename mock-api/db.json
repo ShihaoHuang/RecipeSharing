@@ -1,0 +1,28 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Steamed Rice",
+      "steps": [
+        "Make the rice",
+        "Steam it"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Fried Chicken",
+      "steps": [
+        "Make the chicken",
+        "Deep fry it"
+      ]
+    },
+    {
+      "name": "Fried Chicken",
+      "steps": [
+        "Fry the chicken"
+      ],
+      "id": 6
+    }
+  ],
+  "users": []
+}
