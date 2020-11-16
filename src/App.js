@@ -70,12 +70,13 @@ function App() {
     }).then((editedRecipe) => {
       dispatch({
         type: "RECIPE_EDITED",
-        payload: {
+        payload: {  
           editedRecipe,
         },
       });
     });
     alert(`recipe ${recipeToBeEdited.name} edited`);
+    console.log(recipes)
     window.location.href = `/detail/${recipeToBeEdited.id}`;
   }
 
